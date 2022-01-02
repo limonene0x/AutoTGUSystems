@@ -9,6 +9,7 @@
 // @icon         http://jwxs.tiangong.edu.cn/img/icon/favicon.ico
 // @match        http://jwxs.tiangong.edu.cn/login?errorCode=badCredentials
 // @match        http://jwxs.tjpu.edu.cn/login?errorCode=badCaptcha
+// @match        http://jwxs.tiangong.edu.cn/login?errorCode=badCaptcha
 // @homepage     https://github.com/limonene0x
 // @license      MIT
 // @grant        none
