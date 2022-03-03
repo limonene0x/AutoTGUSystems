@@ -5,6 +5,7 @@
 // @description  在就业系统要求复杂密码后实现自动输入学生账号密码，避免每次重复手动输入，本地运行明文存储密码备忘（请注意尽量不要让不信任的人接触你的电脑，防止个人信息泄露）。
 // @author       Limonene0x
 // @match        http://jobs.tiangong.edu.cn/system/login/login.html
+// @match        https://jobs.tiangong.edu.cn/system/login/login.html
 // @homepage     https://github.com/limonene0x
 // @license      MIT
 // @grant        none
