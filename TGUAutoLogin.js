@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         TGU×Ô¶¯ÊäÈëµÇÂ¼ĞÅÏ¢
+// @name         TGUè‡ªåŠ¨è¾“å…¥ç™»å½•ä¿¡æ¯
 // @namespace    limonene0x
 // @version      0.8
-// @description  ×Ô¶¯ÔÚÌì½ò¹¤Òµ´óÑ§(TGU)ÏµÍ³ÖĞÊäÈëµÇÂ¼ĞÅÏ¢
+// @description  è‡ªåŠ¨åœ¨å¤©æ´¥å·¥ä¸šå¤§å­¦(TGU)ç³»ç»Ÿä¸­è¾“å…¥ç™»å½•ä¿¡æ¯
 // @author       Limonene0x
 // @match        *://*.tiangong.edu.cn/*
 // @homepage     https://github.com/limonene0x/AutoTGUSystems/
@@ -10,24 +10,24 @@
 // @grant        none
 // ==/UserScript==
 
-// ==¹¦ÄÜ¿ªÆôÑ¡Ôñ==
-var course = true; // ½ÌÎñÏµÍ³£º¿ªÆôÇë½« false ¸ÄÎª true
-var jobs = true; // ¾ÍÒµÏµÍ³£º¿ªÆôÇë½« false ¸ÄÎª true
-var real = true; // Êµ¼ù½ÌÑ§¹ÜÀíÏµÍ³£º¿ªÆôÇë½« false ¸ÄÎª true
-// ==/¹¦ÄÜ¿ªÆôÑ¡Ôñ==
+// ==åŠŸèƒ½å¼€å¯é€‰æ‹©==
+var course = false; // æ•™åŠ¡ç³»ç»Ÿï¼šå¼€å¯è¯·å°† false æ”¹ä¸º true
+var jobs = false; // å°±ä¸šç³»ç»Ÿï¼šå¼€å¯è¯·å°† false æ”¹ä¸º true
+var real = false; // å®è·µæ•™å­¦ç®¡ç†ç³»ç»Ÿï¼šå¼€å¯è¯·å°† false æ”¹ä¸º true
+// ==/åŠŸèƒ½å¼€å¯é€‰æ‹©==
 
-// ==ÓÃ»§ĞÅÏ¢ÊäÈëÇøÓò==
-var stu_num = '' // Ñ§ºÅ£¨ÇëÔÚµ¥ÒıºÅÄÚÌîĞ´£©
-var course_pwd = '' // ½ÌÎñÏµÍ³ÃÜÂë£¨ÇëÔÚµ¥ÒıºÅÄÚÌîĞ´£©
-var jobs_pwd = '' // ¾ÍÒµÏµÍ³ÃÜÂë£¨ÇëÔÚµ¥ÒıºÅÄÚÌîĞ´£©
-var real_pwd = '' // Êµ¼ù½ÌÑ§ÏµÍ³ÃÜÂë£¨ÇëÔÚµ¥ÒıºÅÄÚÌîĞ´£©
-// ==/ÓÃ»§ĞÅÏ¢ÊäÈëÇøÓò==
+// ==ç”¨æˆ·ä¿¡æ¯è¾“å…¥åŒºåŸŸ==
+var stu_num = '' // å­¦å·ï¼ˆè¯·åœ¨å•å¼•å·å†…å¡«å†™ï¼‰
+var course_pwd = '' // æ•™åŠ¡ç³»ç»Ÿå¯†ç ï¼ˆè¯·åœ¨å•å¼•å·å†…å¡«å†™ï¼‰
+var jobs_pwd = '' // å°±ä¸šç³»ç»Ÿå¯†ç ï¼ˆè¯·åœ¨å•å¼•å·å†…å¡«å†™ï¼‰
+var real_pwd = '' // å®è·µæ•™å­¦ç³»ç»Ÿå¯†ç ï¼ˆè¯·åœ¨å•å¼•å·å†…å¡«å†™ï¼‰
+// ==/ç”¨æˆ·ä¿¡æ¯è¾“å…¥åŒºåŸŸ==
 
 if (course) {
     try {
         if (window.location.href.indexOf("https://jwxs.tiangong.edu.cn/login?errorCode=") > -1 || window.location.href == "https://jwxs.tiangong.edu.cn/login") {
             if (stu_num == '' || course_pwd == '') {
-                alert('ÇëÔÚ½Å±¾ÖĞÊäÈëÑ§ºÅ»ò½ÌÎñÏµÍ³ÃÜÂë£¡');
+                alert('è¯·åœ¨è„šæœ¬ä¸­è¾“å…¥å­¦å·æˆ–æ•™åŠ¡ç³»ç»Ÿå¯†ç ï¼');
 
             } else {
                 document.querySelector('#input_username').value = stu_num;
@@ -43,9 +43,9 @@ if (jobs) {
     try {
         if (window.location.href == "https://jobs.tiangong.edu.cn/system/login/login.html") {
             if (stu_num == '' || jobs_pwd == '') {
-                alert('ÇëÔÚ½Å±¾ÖĞÊäÈëÑ§ºÅ»ò¾ÍÒµÏµÍ³ÃÜÂë£¡');
+                alert('è¯·åœ¨è„šæœ¬ä¸­è¾“å…¥å­¦å·æˆ–å°±ä¸šç³»ç»Ÿå¯†ç ï¼');
             } else {
-                document.getElementById('login_con_box_std').getElementsByClassName('login_input1').username.setAttribute("onfocus", "if(this.value=='ÇëÊäÈëÑ§ºÅ'){this.value=''}");
+                document.getElementById('login_con_box_std').getElementsByClassName('login_input1').username.setAttribute("onfocus", "if(this.value=='è¯·è¾“å…¥å­¦å·'){this.value=''}");
                 document.getElementById('login_con_box_std').getElementsByClassName('login_input1').username.value = stu_num;
 
                 let tag = document.getElementById('login_con_box_std').getElementsByClassName('login_input1').password1;
@@ -54,8 +54,8 @@ if (jobs) {
                 document.getElementById('login_con_box_std').getElementsByClassName('login_input1').password2.setAttribute("style", "display:block");
                 document.getElementById('login_con_box_std').getElementsByClassName('login_input1').password2.value = jobs_pwd;
 
-                document.getElementById('login_con_box_std').getElementsByClassName('login_input1').password2.setAttribute("onfocus", "if(this.value=='ÇëÊäÈëÃÜÂë'){this.value='';this.type='password'}");
-                document.getElementById('login_con_box_std').getElementsByClassName('login_input1').password2.setAttribute("onblur", "if(this.value==''){this.value='ÇëÊäÈëÃÜÂë';this.type='text'}");
+                document.getElementById('login_con_box_std').getElementsByClassName('login_input1').password2.setAttribute("onfocus", "if(this.value=='è¯·è¾“å…¥å¯†ç '){this.value='';this.type='password'}");
+                document.getElementById('login_con_box_std').getElementsByClassName('login_input1').password2.setAttribute("onblur", "if(this.value==''){this.value='è¯·è¾“å…¥å¯†ç ';this.type='text'}");
             }
         }
     } catch (e) {
@@ -67,7 +67,7 @@ if (real) {
     try {
         if (window.location.href.indexOf("http://bsgl.tiangong.edu.cn/aexp/") > -1) {
             if (stu_num == '' || real_pwd == '') {
-                alert('ÇëÔÚ½Å±¾ÖĞÊäÈëÑ§ºÅ»òÊµ¼ù½ÌÑ§ÏµÍ³ÃÜÂë£¡');
+                alert('è¯·åœ¨è„šæœ¬ä¸­è¾“å…¥å­¦å·æˆ–å®è·µæ•™å­¦ç³»ç»Ÿå¯†ç ï¼');
             } else {
                 document.querySelector('.juese').value = '2';
                 document.loginForm.username.value = stu_num;
