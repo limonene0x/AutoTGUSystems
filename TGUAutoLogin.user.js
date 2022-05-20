@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TGU自动输入登录信息
 // @namespace    limonene0x
-// @version      0.8
+// @version      0.9
 // @description  自动在天津工业大学(TGU)系统中输入登录信息
 // @author       Limonene0x
 // @match        *://*.tiangong.edu.cn/*
@@ -25,7 +25,7 @@ var real_pwd = '' // 实践教学系统密码（请在单引号内填写）
 
 if (course) {
     try {
-        if (window.location.href.indexOf("https://jwxs.tiangong.edu.cn/login?errorCode=") > -1 || window.location.href == "https://jwxs.tiangong.edu.cn/login") {
+        if (window.location.href.indexOf("https://jwxs.tiangong.edu.cn/login?errorCode=") > -1 ||window.location.href.indexOf("http://jwxs.tiangong.edu.cn/login?errorCode=") > -1 || window.location.href == "https://jwxs.tiangong.edu.cn/login" || window.location.href == "http://jwxs.tiangong.edu.cn/login") {
             if (stu_num == '' || course_pwd == '') {
                 alert('请在脚本中输入学号或教务系统密码！');
 
@@ -41,7 +41,7 @@ if (course) {
 
 if (jobs) {
     try {
-        if (window.location.href == "https://jobs.tiangong.edu.cn/system/login/login.html") {
+        if (window.location.href == "https://jobs.tiangong.edu.cn/system/login/login.html" || window.location.href == "http://jobs.tiangong.edu.cn/system/login/login.html") {
             if (stu_num == '' || jobs_pwd == '') {
                 alert('请在脚本中输入学号或就业系统密码！');
             } else {
@@ -65,7 +65,7 @@ if (jobs) {
 
 if (real) {
     try {
-        if (window.location.href.indexOf("http://bsgl.tiangong.edu.cn/aexp/") > -1) {
+        if (window.location.href.indexOf("http://bsgl.tiangong.edu.cn/aexp/") > -1 || window.location.href.indexOf("https://bsgl.tiangong.edu.cn/aexp/") > -1) {
             if (stu_num == '' || real_pwd == '') {
                 alert('请在脚本中输入学号或实践教学系统密码！');
             } else {
