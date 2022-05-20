@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TGU自动输入登录信息
 // @namespace    limonene0x
-// @version      0.9
+// @version      0.9.1
 // @description  自动在天津工业大学(TGU)系统中输入登录信息
 // @author       Limonene0x
 // @match        *://*.tiangong.edu.cn/*
